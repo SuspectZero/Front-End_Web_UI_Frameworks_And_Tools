@@ -14,7 +14,8 @@
     "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts && copyfiles -f node_modules/bootstrap/fonts/* dist/fonts",
     "imagemin": "imagemin img/* -o dist/img",
     "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+    "uglify": "uglifyjs dist/js/main.js -m -c -o dist/js/main.js",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin && npm run uglify"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,14 @@
     "copyfiles": "^1.2.0",
     "cssmin": "^0.4.3",
     "font-awesome": "^4.7.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
     "htmlmin": "0.0.7",
     "imagemin-cli": "^3.0.0",
+    "jit-grunt": "^0.10.0",
     "jquery": "^3.2.1",
     "less": "^2.7.3",
     "lite-server": "^2.3.0",
@@ -40,6 +47,7 @@
     "onchange": "^3.2.1",
     "parallelshell": "^3.0.2",
     "rimraf": "^2.6.2",
+    "time-grunt": "^1.4.0",
     "uglifyjs": "^2.4.11",
     "usemin-cli": "^0.5.1"
   },
